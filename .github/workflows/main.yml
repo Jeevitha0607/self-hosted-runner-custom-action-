@@ -1,4 +1,25 @@
+
 name: System Information Workflow
 
 on:
+  push:
+    branches:
+      - main
+
   workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  system-information:
+    name: Display System Information
+
+    runs-on: [self-hosted, linux, x64]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Execute System Information Custom Action
+        uses: ./.github/actions/system-info
