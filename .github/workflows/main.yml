@@ -1,0 +1,4 @@
+name: System Information Workflow
+
+on:
+  workflow_dispatch:
