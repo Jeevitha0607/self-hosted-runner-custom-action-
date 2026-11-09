@@ -1,0 +1,30 @@
+
+name: System Information
+description: Display date, user, hostname and disk usage
+
+runs:
+  using: composite
+  steps:
+    - name: Display System Information
+      shell: bash
+      run: |
+        echo "========== SYSTEM INFORMATION =========="
+
+        echo ""
+        echo "1. DATE:"
+        date
+
+        echo ""
+        echo "2. USER:"
+        whoami
+
+        echo ""
+        echo "3. HOSTNAME:"
+        hostname
+
+        echo ""
+        echo "4. DISK USAGE:"
+        df -h /
+
+        echo ""
+        echo "========================================="
